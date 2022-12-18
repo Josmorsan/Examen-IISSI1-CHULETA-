@@ -1,0 +1,64 @@
+-- Instalar silence
+silence --version
+pip install silence
+
+-- Al entrar en mariadb
+root
+iissi$root
+
+-- Crear usuario
+CREDENCIALES:
+nombre de usuario: iissi_user
+contraseña: iissi$user
+
+-- Una vez dentro del heidiSQL
+crear base de datos
+utf16-rumano
+
+USE examen; -- BD del examen (previamente creada manualmente)
+
+CREATE OR REPLACE TABLE animales (
+
+animal_oid INT KEY AUTO_INCREMENT,
+animal VARCHAR (30) UNIQUE
+);
+
+INSERT INTO animales (animal) VALUES
+('Perro'),('Gato'),('Mono');
+
+[Si no nos dan base de datos y tenemos que crearla pegamos la consulta descargada de la base de datos hecha por nosotros
+en la carpeta que tenemos que crear para empezar a construir el proyecto silence en cuestion]
+
+-- Iniciar proyecto silence
+crear carpeta
+abrir cmd desde la carpeta creada por mi
+silence new (nombre de la carpeta) --blank
+abrir visual studio code (vsc)
+abrir carpeta interna del proyecto ( con esto me refiero a no abrir la carpeta principal sino la que hay dentro de ella misma con el mismo nombre)
+
+-- Una vez dentro de vsc
+
+cambio el nombre de "database" al nombre de la database que debo seleccionar
+en SQL_SCRIPTS cambiamos el ejemplo que nos dan por el nombre de los modulos sqls que nos den
+
+abrimos el terminal con control ñ y usamos el comando "silence createdb" para rellenar la base de datos creada en mariadb
+usamos los comandos "silence createapi", "silence createtests" y "silence run" para crear ambas carpetas que nos haran falta
+entramos en la carpeta endpoints dentro de la base de datos creada (en este caso animales.json) y ponemos todos los endpoints que vamos a usar a false
+en animales.http nos quedamos con los get (getAll y getById) , post, put, delete el resto de componentes de esta carpeta podemos eliminarlos si queremos 
+lineas que usamos:
+lineas 49-56 (insertar animal, control s, send request)
+se usan mas 
+
+-- Uso de Git Hub
+copias enlace del proyecto git hub
+abres cmd
+usas el comando "git clone (control v del enlace del proyecto)"
+despues usas el "comando git add ." para que actualice los cambios y "git status" para comprobar que todo es correcto
+usar el comando "git commit -m" (mensaje del commit)
+usar el comando "git push" para subirlo al propio github
+git hub de la us = github.eii.us.es
+
+
+
+
+
