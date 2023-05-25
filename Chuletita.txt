@@ -59,6 +59,26 @@ usar el comando "git push" para subirlo al propio github
 git hub de la us = github.eii.us.es
 
 
+public static String PrimeraLinea (String filePath) throws IOException {
+	Path path = Path.of(filePath);
+	String primeraLinea = Files.lines(path).findFirst().orElse(null);
+	return primeraLinea;
+	
+}
+
+public static void main (String[] args) {
+
+String filePath = "data/marvel.csv";
+try {
+	String primeraLinea = PrimeraLinea(filePath);
+	System.out.println(primeraLinea);
+} catch (IOException e)	{
+
+e.printStackTrace();
+	}
+}
+
+
 
 
 
